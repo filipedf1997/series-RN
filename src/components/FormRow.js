@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-const FormRow = ({children}) => {
+const FormRow = ({children, first, last}) => {
   return(
-    <View style={styles.container}>
+    <View style={[styles.container, first && styles.first, last && styles.last]}>
       {children}
     </View>
   )
@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     elevation: 1
+  },
+  first: {
+    marginTop: 10,
+  },
+  last: {
+    marginBottom: 10
   }
 })
 
